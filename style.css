@@ -1,256 +1,501 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix Relationship | Our Story</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome untuk icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div id="opening" class="opening-overlay">
-    <div class="logo-animation">
-        <h1 class="netflix-logo">NETFLIX</h1>
-        <div class="loading-container">
-            <div class="loading-bar"></div>
-        </div>
-        <p class="sub-logo">RELATIONSHIP</p>
-    </div>
-</div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-left">
-            <h2 class="brand">YB<h2></h2>
-            <ul class="nav-links">
-                <li>Home</li>
-                <li>Series</li>
-                <li>Movies</li>
-                <li>My Memories</li>
-            </ul>
-        </div>
-        <div class="nav-right">
-            <i class="fas fa-search"></i>
-            <div class="profile-pic"></div>
-        </div>
-    </nav>
-
-<!-- Banner Notifikasi Episode Baru -->
-<div class="new-episode-banner">
-    <div class="banner-content">
-        <span class="badge">NEW EPISODE</span>
-        <p>Satu episode baru tersedia: <strong>Merencanakan Liburan Selanjutnya ✈️</strong></p>
-    </div>
-    <button class="btn-close-banner" onclick="this.parentElement.style.display='none'">✕</button>
-</div>
-
-    <!-- Hero Section dengan Video Background -->
-<header class="hero">
-    <!-- Video Player -->
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="video6.mp4" type="video/mp4">
-        <!-- Jika video di atas tidak bisa diputar, browser akan pakai gambar ini -->
-        <img src="backup-image.jpg" title="Browser Anda tidak mendukung video">
-    </video>
-
-    <div class="hero-overlay"></div>
-    
-    <div class="hero-content">
-        <h1 class="main-title">STILL WITH YOU</h1>
-        <div class="meta-info">
-            <span class="match">99% Match</span>
-            <span class="year">2026</span>
-            <span class="rating">18+</span>
-            <span class="hd">HD</span>
-        </div>
-        <p class="hero-description">
-            Saksikan setiap detik perjalanan kami yang terekam dalam Momen.
-            Sebuah bukti bahwa cinta adalah tentang tumbuh bersama.
-        </p>
-        <div class="hero-buttons">
-            <button class="btn btn-white" onclick="startWatching()"><i class="fas fa-play"></i> Play</button>
-            <button class="btn btn-gray"><i class="fas fa-info-circle"></i> More Info</button>
-        </div>
-    </div>
-    </header>
-
-    <main class="content-container">
-    
-    <!-- Season 1: Video Preview -->
-    <section class="row">
-        <h2 class="row-title">Season 1: How We Met</h2>
-        <div class="episode-list">
-           <!-- Contoh pada satu kartu di Season 1 -->
-<div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
-    <video muted loop playsinline class="card-video video-preview">
-        <source src="video3.mp4" type="video/mp4">
-    </video>
-    <div class="card-info">
-        <h4>Ep 1: The Beginning</h4>
-        <p>Uda tau siapa juara nya kalo makan kan.</p>
-    </div>
-</div>
-            
-            <!-- Contoh pada satu kartu di Season 1 -->
-<div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
-    <video muted loop playsinline class="card-video video-preview">
-        <source src="video2.mp4" type="video/mp4">
-    </video>
-    <div class="card-info">
-        <h4>Ep 2: The Result</h4>
-        <p>Moment pertama kali pigi jauh.</p>
-    </div>
-</div>
-
-    <!-- Season 2: Video Preview -->
-  <div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
-     <video muted loop playsinline class="card-video video-preview">
-         <source src="video4.mp4" type="video/mp4">
-     </video>
-    <div class="card-info">
-        <h4>Ep 3: Out Of The Box</h4>
-        <p></p>
-    </div>
-    </div>
-
-    <!-- Season 2: Video Preview -->
-  <div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
-     <video muted loop playsinline class="card-video video-preview">
-         <source src="video5.mp4" type="video/mp4">
-     </video>
-    <div class="card-info">
-        <h4>Ep 4:Keep Eating </h4>
-        <p>Apapun cuacanya makan adalah solusinya</p>
-    </div>
-  </div>
-
-    <!-- Season 2: Video Preview -->
-  <div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
-     <video muted loop playsinline class="card-video video-preview">
-         <source src="video.mp4" type="video/mp4">
-     </video>
-    <div class="card-info">
-        <h4>Ep 5:This Is Our Vlog </h4>
-        <p>Banyak hal untuk mendefinisikan kecantikan,tapi aku hanya perlu melihat dia</p>
-    </div>
-</div>
-    </section>
-
-    <!-- Season 3: Tetap Foto (Sesuai Permintaan Anda) -->
-    <section class="row">
-        <h2 class="row-title">The Next Season: When You Need Me</h2>
-        <div class="episode-list">
-            <div class="card tall">
-                <div class="card-img" style="background-image: url('foto1.jpeg')"></div>
-                <div class="card-info">
-                    <h4>Virtual Hug</h4>
-                    <p>Klik saat kamu merasa lelah.</p>
-                    <button class="btn-small">Get Hug</button>
-                </div>
-            </div>
-            <div class="card tall">
-                <div class="card-img" style="background-image: url('foto4.jpeg')"></div>
-                <div class="card-info">
-                    <h4>For You</h4>
-                    <p>Bahagia Selalu Cintakuuuuu.</p>
-                </div>
-            </div>
-            <div class="card tall">
-                <div class="card-img" style="background-image: url('foto3.jpeg')"></div>
-                <div class="card-info">
-                    <h4>The Winner</h4>
-                    <p>Sama sama juara</p>
-                </div>
-            </div>
-                <div class="card tall">
-                <div class="card-img" style="background-image: url('foto5.jpeg')"></div>
-                <div class="card-info">
-                    <h4>The Sea</h4>
-                    <p>Pantai With Youuu</p>
-                </div>
-                 </div>
-                <div class="card tall">
-                <div class="card-img" style="background-image: url('foto2.jpeg')"></div>
-                <div class="card-info">
-                    <h4>Me Amor</h4>
-                    <p></p>
-                </div>
-                </div>
-                <div class="card tall">
-                <div class="card-img" style="background-image: url('foto6.jpeg')"></div>
-                <div class="card-info">
-                    <h4>The Champ</h4>
-                    <p>Perayaan kecil-kecilan</p>
-                </div>
-        </div>
-    </section>
-
-</main>
-    </main>
-<!-- Closing Statement Section -->
-<section class="closing-statement">
-    <div class="closing-content">
-        <h2 class="closing-title">To Be Continued...</h2>
-        <p class="closing-text">
-            "Setiap detik bersamamu adalah adegan favoritku. Terimakasih telah menjadi bagian dari cerita terindah dalam hidupku. Mari kita tulis lebih banyak episode luar biasa bersama-sama."
-        </p>
-        <div class="signature">With love,Rajaaaaaa ❤️</div>
-    </div>
-
-</section>
-    <footer class="footer">
-        <p>Dibuat Dengan Cinta &copy; 2026 - Netflix Relationship Project</p>
-    </footer>
-
-    <script>
-       document.addEventListener('DOMContentLoaded', () => {
-    // Waktu tunggu disesuaikan dengan loading bar (1.5 detik)
-    setTimeout(() => {
-        const opening = document.getElementById('opening');
-        opening.style.opacity = '0';
-        setTimeout(() => {
-            opening.style.display = 'none';
-        }, 400); // Transisi menghilang
-    }, 1500); 
-        });
-
-        // Sticky Navbar Effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('nav-black');
-            } else {
-                nav.classList.remove('nav-black');
-            }
-        });
-
-        function startWatching() {
-            window.scrollTo({
-                top: window.innerHeight - 100,
-                behavior: 'smooth'
-            });
-        }
-        function playPreview(card) {
-    // Mencari elemen video di dalam kartu yang sedang di-hover
-    const video = card.querySelector('.video-preview');
-    if (video) {
-        video.play();
-    }
+/* Global Reset */
+.hero {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #141414;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
-function pausePreview(card) {
-    // Mencari elemen video di dalam kartu saat kursor keluar
-    const video = card.querySelector('.video-preview');
-    if (video) {
-        video.pause();
-        video.currentTime = 0; // Opsional: Kembali ke awal video saat berhenti
+/* Opening Cinematic - GANTI BAGIAN INI */
+.opening-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.netflix-logo {
+    color: #E50914;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(50px, 10vw, 80px); /* Responsif otomatis */
+    letter-spacing: 5px;
+    animation: zoomIn 0.8s forwards;
+}
+
+/* TAMBAHKAN Loading Bar di bawah .netflix-logo */
+.loading-container {
+    width: 200px;
+    height: 4px;
+    background: #333;
+    margin: 20px auto;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.loading-bar {
+    width: 0%;
+    height: 100%;
+    background: #E50914;
+    animation: loadProgress 1.2s ease-in-out forwards;
+}
+
+@keyframes loadProgress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+.logo-animation {
+    text-align: center;
+}
+
+.netflix-logo {
+    color: #E50914;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    letter-spacing: 5px;
+    animation: zoomIn 0.8s forwards;
+}
+
+.sub-logo {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 10px;
+    margin-top: -10px;
+    font-weight: 300;
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent);
+    z-index: 1000;
+    transition: background-color 0.4s;
+}
+
+.nav-black {
+    background-color: #141414;
+    padding: 15px 4%;
+}
+
+.brand {
+    color: #E50914;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    margin-right: 25px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li {
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links li:hover {
+    color: #b3b3b3;
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    background-color: #333;
+    border-radius: 4px;
+    background-image: url('https://via.placeholder.com/32/E50914/FFFFFF?text=YOU');
+    background-size: cover;
+}
+
+/* Hero Section */
+/* Styling Video Background */
+.hero {
+    height: 90vh; /* Tinggi hero section */
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    overflow: hidden; /* Agar video tidak keluar jalur */
+    background: black; /* Warna dasar jika video gagal load */
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Memastikan video memenuhi area tanpa gepeng */
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradien agar teks lebih mudah dibaca di atas video */
+    background: linear-gradient(77deg, rgba(20,20,20,0.8) 0%, rgba(20,20,20,0.2) 50%, transparent 85%),
+                linear-gradient(to top, rgba(20,20,20,1) 0%, transparent 20%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    z-index: 2; /* Di atas overlay dan video */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(77deg, rgba(20,20,20,0.8) 0%, rgba(20,20,20,0) 85%);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 650px;
+    z-index: 1;
+}
+
+.hero-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 70px;
+    margin-bottom: 15px;
+    line-height: 0.9;
+    letter-spacing: 2px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    line-height: 1.4;
+}
+
+.btn {
+    padding: 12px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.btn-white {
+    background-color: white;
+    color: black;
+}
+
+.btn-white:hover {
+    background-color: rgba(255,255,255,0.75);
+}
+
+.btn-gray {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+}
+
+.btn-gray:hover {
+    background-color: rgba(109, 109, 110, 0.4);
+}
+
+/* Rows & Cards */
+.content-container {
+    margin-top: -150px;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 100px;
+    background: linear-gradient(to bottom, transparent, #141414 150px);
+}
+
+.row {
+    margin: 40px 0;
+    padding: 0 4%;
+}
+
+.row-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.episode-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.episode-list::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    min-width: 280px;
+    height: 158px; /* Pastikan tinggi ini tetap agar konsisten */
+    background-color: #181818;
+    border-radius: 4px;
+    overflow: hidden; /* Tambahkan ini jika belum ada untuk memotong video yang berlebih */
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    z-index: 100;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95) 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .card-info {
+    opacity: 1;
+}
+
+.card-info h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    font-size: 11px;
+    color: #d2d2d2;
+    line-height: 1.2;
+}
+
+/* Special Items */
+.tall {
+    min-width: 220px;
+    height: 330px;
+}
+
+.btn-small {
+    background-color: #E50914;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    padding: 80px 4% 40px;
+    text-align: center;
+    color: #808080;
+    font-size: 14px;
+    border-top: 1px solid #333;
+    margin: 0 4%;
+}
+/* Styling Video di dalam Kartu Episode */
+.card-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ini wajib ada agar video dipotong secara rapi, bukan ditarik/gepeng */
+    display: block;
+}
+
+/* Pastikan card-img tetap ada untuk Season 3 */
+.card-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Penyesuaian Hover agar Video juga membesar dengan rapi */
+.card:hover {
+    transform: scale(1.1);
+    z-index: 100;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+}
+.new-episode-banner {
+    background: linear-gradient(90deg, #E50914, #8b0000);
+    color: white;
+    padding: 10px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1001; /* Di atas navbar jika perlu */
+    margin-top: 70px; /* Menyesuaikan agar tidak tertutup navbar fixed */
+    animation: slideDown 0.5s ease-out;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge {
+    background-color: white;
+    color: #E50914;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.new-episode-banner p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.btn-close-banner {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.btn-close-banner:hover {
+    opacity: 1;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+.closing-statement {
+    padding: 100px 4%;
+    text-align: center;
+    background: linear-gradient(to bottom, #141414, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closing-content {
+    max-width: 800px;
+}
+
+.closing-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    color: #E50914;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.closing-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e5e5e5;
+    font-style: italic;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.signature {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    opacity: 0.8;
+}
+
+/* --- KHUSUS TAMPILAN HP --- */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 38px !important; /* Judul mengecil biar gak meluber */
+    }
+    
+    .hero {
+        height: 65vh !important; /* Tinggi hero section pas di layar HP */
+    }
+
+    .card {
+        min-width: 160px; /* Kartu mengecil di HP */
+        height: 100px;
+    }
+
+    .tall {
+        min-width: 130px; /* Foto portrait mengecil di HP */
+        height: 200px;
+    }
+
+    .content-container {
+        margin-top: -50px; /* Jarak section naik sedikit */
+    }
+
+    .nav-links {
+        display: none; /* Menu teks hilang di HP biar rapi */
     }
 }
-    </script>
-    
-</body>
-</html>
