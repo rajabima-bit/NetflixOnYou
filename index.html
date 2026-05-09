@@ -12,13 +12,15 @@
 </head>
 <body>
 
-    <!-- Opening Cinematic Overlay -->
     <div id="opening" class="opening-overlay">
-        <div class="logo-animation">
-            <h1 class="netflix-logo">NETFLIX</h1>
-            <p class="sub-logo">RELATIONSHIP</p>
+    <div class="logo-animation">
+        <h1 class="netflix-logo">NETFLIX</h1>
+        <div class="loading-container">
+            <div class="loading-bar"></div>
         </div>
+        <p class="sub-logo">RELATIONSHIP</p>
     </div>
+</div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -205,15 +207,15 @@
     </footer>
 
     <script>
-        // Opening Animation
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const opening = document.getElementById('opening');
-                opening.style.opacity = '0';
-                setTimeout(() => {
-                    opening.style.display = 'none';
-                }, 300);
-            }, 1000);
+       document.addEventListener('DOMContentLoaded', () => {
+    // Waktu tunggu disesuaikan dengan loading bar (1.5 detik)
+    setTimeout(() => {
+        const opening = document.getElementById('opening');
+        opening.style.opacity = '0';
+        setTimeout(() => {
+            opening.style.display = 'none';
+        }, 400); // Transisi menghilang
+    }, 1500); 
         });
 
         // Sticky Navbar Effect
