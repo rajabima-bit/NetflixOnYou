@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Relationship | Our Story</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Opening Cinematic Overlay -->
+    <div id="opening" class="opening-overlay">
+        <div class="logo-animation">
+            <h1 class="netflix-logo">NETFLIX</h1>
+            <p class="sub-logo">RELATIONSHIP</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <h2 class="brand">YB<h2></h2>
+            <ul class="nav-links">
+                <li>Home</li>
+                <li>Series</li>
+                <li>Movies</li>
+                <li>My Memories</li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <i class="fas fa-search"></i>
+            <div class="profile-pic"></div>
+        </div>
+    </nav>
+
+<!-- Banner Notifikasi Episode Baru -->
+<div class="new-episode-banner">
+    <div class="banner-content">
+        <span class="badge">NEW EPISODE</span>
+        <p>Satu episode baru tersedia: <strong>Merencanakan Liburan Selanjutnya ✈️</strong></p>
+    </div>
+    <button class="btn-close-banner" onclick="this.parentElement.style.display='none'">✕</button>
+</div>
+
+    <!-- Hero Section dengan Video Background -->
+<header class="hero">
+    <!-- Video Player -->
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="video6.mp4" type="video/mp4">
+        <!-- Jika video di atas tidak bisa diputar, browser akan pakai gambar ini -->
+        <img src="backup-image.jpg" title="Browser Anda tidak mendukung video">
+    </video>
+
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+        <h1 class="main-title">STILL WITH YOU</h1>
+        <div class="meta-info">
+            <span class="match">99% Match</span>
+            <span class="year">2026</span>
+            <span class="rating">18+</span>
+            <span class="hd">HD</span>
+        </div>
+        <p class="hero-description">
+            Saksikan setiap detik perjalanan kami yang terekam dalam Momen.
+            Sebuah bukti bahwa cinta adalah tentang tumbuh bersama.
+        </p>
+        <div class="hero-buttons">
+            <button class="btn btn-white" onclick="startWatching()"><i class="fas fa-play"></i> Play</button>
+            <button class="btn btn-gray"><i class="fas fa-info-circle"></i> More Info</button>
+        </div>
+    </div>
+    </header>
+
+    <main class="content-container">
+    
+    <!-- Season 1: Video Preview -->
+    <section class="row">
+        <h2 class="row-title">Season 1: How We Met</h2>
+        <div class="episode-list">
+           <!-- Contoh pada satu kartu di Season 1 -->
+<div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
+    <video muted loop playsinline class="card-video video-preview">
+        <source src="video3.mp4" type="video/mp4">
+    </video>
+    <div class="card-info">
+        <h4>Ep 1: The Beginning</h4>
+        <p>Uda tau siapa juara nya kalo makan kan.</p>
+    </div>
+</div>
+            
+            <!-- Contoh pada satu kartu di Season 1 -->
+<div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
+    <video muted loop playsinline class="card-video video-preview">
+        <source src="video2.mp4" type="video/mp4">
+    </video>
+    <div class="card-info">
+        <h4>Ep 2: The Result</h4>
+        <p>Moment pertama kali pigi jauh.</p>
+    </div>
+</div>
+
+    <!-- Season 2: Video Preview -->
+  <div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
+     <video muted loop playsinline class="card-video video-preview">
+         <source src="video4.mp4" type="video/mp4">
+     </video>
+    <div class="card-info">
+        <h4>Ep 3: Out Of The Box</h4>
+        <p></p>
+    </div>
+    </div>
+
+    <!-- Season 2: Video Preview -->
+  <div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
+     <video muted loop playsinline class="card-video video-preview">
+         <source src="video5.mp4" type="video/mp4">
+     </video>
+    <div class="card-info">
+        <h4>Ep 4:Keep Eating </h4>
+        <p>Apapun cuacanya makan adalah solusinya</p>
+    </div>
+  </div>
+
+    <!-- Season 2: Video Preview -->
+  <div class="card" onmouseenter="playPreview(this)" onmouseleave="pausePreview(this)">
+     <video muted loop playsinline class="card-video video-preview">
+         <source src="video.mp4" type="video/mp4">
+     </video>
+    <div class="card-info">
+        <h4>Ep 5:This Is Our Vlog </h4>
+        <p>Banyak hal untuk mendefinisikan kecantikan,tapi aku hanya perlu melihat dia</p>
+    </div>
+</div>
+    </section>
+
+    <!-- Season 3: Tetap Foto (Sesuai Permintaan Anda) -->
+    <section class="row">
+        <h2 class="row-title">The Next Season: When You Need Me</h2>
+        <div class="episode-list">
+            <div class="card tall">
+                <div class="card-img" style="background-image: url('foto1.jpeg')"></div>
+                <div class="card-info">
+                    <h4>Virtual Hug</h4>
+                    <p>Klik saat kamu merasa lelah.</p>
+                    <button class="btn-small">Get Hug</button>
+                </div>
+            </div>
+            <div class="card tall">
+                <div class="card-img" style="background-image: url('foto4.jpeg')"></div>
+                <div class="card-info">
+                    <h4>For You</h4>
+                    <p>Bahagia Selalu Cintakuuuuu.</p>
+                </div>
+            </div>
+            <div class="card tall">
+                <div class="card-img" style="background-image: url('foto3.jpeg')"></div>
+                <div class="card-info">
+                    <h4>The Winner</h4>
+                    <p>Sama sama juara</p>
+                </div>
+            </div>
+                <div class="card tall">
+                <div class="card-img" style="background-image: url('foto5.jpeg')"></div>
+                <div class="card-info">
+                    <h4>The Sea</h4>
+                    <p>Pantai With Youuu</p>
+                </div>
+                 </div>
+                <div class="card tall">
+                <div class="card-img" style="background-image: url('foto2.jpeg')"></div>
+                <div class="card-info">
+                    <h4>Me Amor</h4>
+                    <p></p>
+                </div>
+                </div>
+                <div class="card tall">
+                <div class="card-img" style="background-image: url('foto6.jpeg')"></div>
+                <div class="card-info">
+                    <h4>The Champ</h4>
+                    <p>Perayaan kecil-kecilan</p>
+                </div>
+        </div>
+    </section>
+
+</main>
+    </main>
+<!-- Closing Statement Section -->
+<section class="closing-statement">
+    <div class="closing-content">
+        <h2 class="closing-title">To Be Continued...</h2>
+        <p class="closing-text">
+            "Setiap detik bersamamu adalah adegan favoritku. Terimakasih telah menjadi bagian dari cerita terindah dalam hidupku. Mari kita tulis lebih banyak episode luar biasa bersama-sama."
+        </p>
+        <div class="signature">With love,Rajaaaaaa ❤️</div>
+    </div>
+
+</section>
+    <footer class="footer">
+        <p>Dibuat Dengan Cinta &copy; 2026 - Netflix Relationship Project</p>
+    </footer>
+
+    <script>
+        // Opening Animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const opening = document.getElementById('opening');
+                opening.style.opacity = '0';
+                setTimeout(() => {
+                    opening.style.display = 'none';
+                }, 300);
+            }, 1000);
+        });
+
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-black');
+            } else {
+                nav.classList.remove('nav-black');
+            }
+        });
+
+        function startWatching() {
+            window.scrollTo({
+                top: window.innerHeight - 100,
+                behavior: 'smooth'
+            });
+        }
+        function playPreview(card) {
+    // Mencari elemen video di dalam kartu yang sedang di-hover
+    const video = card.querySelector('.video-preview');
+    if (video) {
+        video.play();
+    }
+}
+
+function pausePreview(card) {
+    // Mencari elemen video di dalam kartu saat kursor keluar
+    const video = card.querySelector('.video-preview');
+    if (video) {
+        video.pause();
+        video.currentTime = 0; // Opsional: Kembali ke awal video saat berhenti
+    }
+}
+    </script>
+    
+</body>
+</html>

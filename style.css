@@ -1,0 +1,442 @@
+/* Global Reset */
+.hero {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #141414;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Opening Cinematic */
+.opening-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.logo-animation {
+    text-align: center;
+}
+
+.netflix-logo {
+    color: #E50914;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    letter-spacing: 5px;
+    animation: zoomIn 0.8s forwards;
+}
+
+.sub-logo {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 10px;
+    margin-top: -10px;
+    font-weight: 300;
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent);
+    z-index: 1000;
+    transition: background-color 0.4s;
+}
+
+.nav-black {
+    background-color: #141414;
+    padding: 15px 4%;
+}
+
+.brand {
+    color: #E50914;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    margin-right: 25px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li {
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links li:hover {
+    color: #b3b3b3;
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    background-color: #333;
+    border-radius: 4px;
+    background-image: url('https://via.placeholder.com/32/E50914/FFFFFF?text=YOU');
+    background-size: cover;
+}
+
+/* Hero Section */
+/* Styling Video Background */
+.hero {
+    height: 90vh; /* Tinggi hero section */
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    overflow: hidden; /* Agar video tidak keluar jalur */
+    background: black; /* Warna dasar jika video gagal load */
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Memastikan video memenuhi area tanpa gepeng */
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradien agar teks lebih mudah dibaca di atas video */
+    background: linear-gradient(77deg, rgba(20,20,20,0.8) 0%, rgba(20,20,20,0.2) 50%, transparent 85%),
+                linear-gradient(to top, rgba(20,20,20,1) 0%, transparent 20%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    z-index: 2; /* Di atas overlay dan video */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(77deg, rgba(20,20,20,0.8) 0%, rgba(20,20,20,0) 85%);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 650px;
+    z-index: 1;
+}
+
+.hero-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 70px;
+    margin-bottom: 15px;
+    line-height: 0.9;
+    letter-spacing: 2px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    line-height: 1.4;
+}
+
+.btn {
+    padding: 12px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.btn-white {
+    background-color: white;
+    color: black;
+}
+
+.btn-white:hover {
+    background-color: rgba(255,255,255,0.75);
+}
+
+.btn-gray {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+}
+
+.btn-gray:hover {
+    background-color: rgba(109, 109, 110, 0.4);
+}
+
+/* Rows & Cards */
+.content-container {
+    margin-top: -150px;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 100px;
+    background: linear-gradient(to bottom, transparent, #141414 150px);
+}
+
+.row {
+    margin: 40px 0;
+    padding: 0 4%;
+}
+
+.row-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.episode-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.episode-list::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    min-width: 280px;
+    height: 158px; /* Pastikan tinggi ini tetap agar konsisten */
+    background-color: #181818;
+    border-radius: 4px;
+    overflow: hidden; /* Tambahkan ini jika belum ada untuk memotong video yang berlebih */
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    z-index: 100;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95) 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .card-info {
+    opacity: 1;
+}
+
+.card-info h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    font-size: 11px;
+    color: #d2d2d2;
+    line-height: 1.2;
+}
+
+/* Special Items */
+.tall {
+    min-width: 220px;
+    height: 330px;
+}
+
+.btn-small {
+    background-color: #E50914;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    padding: 80px 4% 40px;
+    text-align: center;
+    color: #808080;
+    font-size: 14px;
+    border-top: 1px solid #333;
+    margin: 0 4%;
+}
+/* Styling Video di dalam Kartu Episode */
+.card-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ini wajib ada agar video dipotong secara rapi, bukan ditarik/gepeng */
+    display: block;
+}
+
+/* Pastikan card-img tetap ada untuk Season 3 */
+.card-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Penyesuaian Hover agar Video juga membesar dengan rapi */
+.card:hover {
+    transform: scale(1.1);
+    z-index: 100;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+}
+.new-episode-banner {
+    background: linear-gradient(90deg, #E50914, #8b0000);
+    color: white;
+    padding: 10px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1001; /* Di atas navbar jika perlu */
+    margin-top: 70px; /* Menyesuaikan agar tidak tertutup navbar fixed */
+    animation: slideDown 0.5s ease-out;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge {
+    background-color: white;
+    color: #E50914;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.new-episode-banner p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.btn-close-banner {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.btn-close-banner:hover {
+    opacity: 1;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+.closing-statement {
+    padding: 100px 4%;
+    text-align: center;
+    background: linear-gradient(to bottom, #141414, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closing-content {
+    max-width: 800px;
+}
+
+.closing-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    color: #E50914;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.closing-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e5e5e5;
+    font-style: italic;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.signature {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    opacity: 0.8;
+}
