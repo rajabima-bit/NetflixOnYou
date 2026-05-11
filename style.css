@@ -476,73 +476,66 @@ body {
 
 /* --- KHUSUS TAMPILAN HP (Hanya Tulisan yang Mengecil) --- */
 /* --- SERIUS: FIX RESPONSIVE UNTUK HP --- */
+/* --- FIX TOTAL: TEKS DI BAWAH VIDEO & FOTO TETAP ASLI --- */
 @media only screen and (max-width: 768px) {
     
-    /* 1. Paksa Video Hero Mengecil & Tidak Gepeng */
-    header.hero {
+    /* 1. HERO SECTION: Kecilkan tanpa gepeng */
+    .hero {
         height: 45vh !important;
         min-height: 280px !important;
-        display: flex !important;
-        align-items: center !important;
     }
+    .hero-video {
+        object-fit: cover !important;
+    }
+    .main-title { font-size: 30px !important; }
 
-    header.hero .hero-video {
+    /* 2. VIDEO CARDS (Season 1): Teks di bawah video */
+    .card:not(.tall) {
+        min-width: 160px !important;
+        height: auto !important; /* Biar tinggi kartu menyesuaikan teks di bawah */
+        background: transparent !important;
+        display: block !important;
+    }
+    .card:not(.tall) .card-video {
+        height: 90px !important; /* Ukuran video tetap kecil */
         width: 100% !important;
+        object-fit: cover !important;
+        border-radius: 4px;
+    }
+    .card:not(.tall) .card-info {
+        position: relative !important; /* Pindahkan teks ke bawah video */
+        opacity: 1 !important;
+        background: transparent !important;
+        padding: 5px 0 !important;
+    }
+    .card:not(.tall) .card-info h4 {
+        font-size: 11px !important;
+        color: white !important;
+        margin: 2px 0 !important;
+    }
+    .card:not(.tall) .card-info p {
+        font-size: 9px !important;
+        color: #b3b3b3 !important;
+        display: block !important; /* Teks muncul terus di bawah */
+    }
+
+    /* 3. FOTO CARDS (Season 3): Ukuran Tetap Sesuai Awal (Tall) */
+    .card.tall {
+        min-width: 130px !important; /* Lebar menyesuaikan HP */
+        height: 190px !important; /* Tetap tinggi/potrait tapi skala HP */
+    }
+    .card.tall .card-img {
         height: 100% !important;
-        object-fit: cover !important; /* Supaya video tidak gepeng */
-        position: absolute !important;
-    }
-
-    /* 2. Paksa Teks Hero Mengecil */
-    .hero-content .main-title {
-        font-size: 28px !important;
-        line-height: 1 !important;
-    }
-
-    .hero-content .hero-description {
-        font-size: 12px !important;
-        line-height: 1.3 !important;
-    }
-
-    /* 3. Paksa Teks Season 1 Mengecil (Ini intinya) */
-    .content-container .row .row-title {
-        font-size: 15px !important;
-    }
-
-    /* Target langsung ke h4 dan p di dalam card-info */
-    .content-container .card .card-info h4 {
-        font-size: 10px !important;
-        margin-bottom: 2px !important;
-    }
-
-    .content-container .card .card-info p {
-        font-size: 8px !important; /* Ukuran sangat kecil khusus layar HP */
-        line-height: 1.1 !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important; /* Potong teks jadi 2 baris */
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        white-space: normal !important;
-    }
-
-    /* 4. Jaga Ukuran Kartu (Agar foto tidak berubah/gepeng) */
-    .content-container .card {
-        min-width: 150px !important;
-        height: 85px !important;
-        flex: 0 0 auto !important;
-    }
-
-    .content-container .card .card-video, 
-    .content-container .card .card-img {
         width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important; /* Foto/Video tetap proporsional */
+        object-fit: cover !important; /* Foto tidak gepeng */
+    }
+    .card.tall .card-info {
+        position: absolute !important; /* Tetap melayang di atas foto */
+        bottom: 0;
+        background: linear-gradient(transparent, rgba(0,0,0,0.8));
     }
 
-    /* 5. Penyesuaian Spasi */
-    .content-container {
-        margin-top: -60px !important;
-        padding-bottom: 30px !important;
-    }
+    /* 4. Penyesuaian Baris */
+    .row-title { font-size: 16px !important; }
+    .episode-list { gap: 12px !important; }
 }
