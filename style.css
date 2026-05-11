@@ -474,71 +474,37 @@ body {
     opacity: 0.8;
 }
 
-/* --- KHUSUS TAMPILAN HP (TIMPA SEMUA UKURAN TULISAN) --- */
-@media (max-width: 768px) {
-    /* Judul Film/Utama di Hero */
-    .main-title { 
-        font-size: 32px !important; 
-        line-height: 1.1 !important;
-        margin-bottom: 10px !important;
-    }
-
-    /* Deskripsi di bawah judul */
-    .hero-description {
-        font-size: 13px !important;
-        line-height: 1.3 !important;
-        max-width: 100% !important;
-    }
-
-    /* Judul Season (Season 1, 2, 3) */
-    .row-title {
-        font-size: 16px !important;
-        margin-bottom: 10px !important;
-    }
-
-    /* Tulisan di dalam Banner Merah */
-    .new-episode-banner p {
-        font-size: 11px !important;
-    }
-
-    /* Ungkapan Penutup/Closing */
-    .closing-title {
-        font-size: 28px !important;
-    }
-
-    .closing-text {
-        font-size: 14px !important;
-    }
-
-    /* Kartu-kartu biar gak meluber */
-    .card {
-        min-width: 150px !important;
-        height: 90px !important;
-    }
-
-    .tall {
-        min-width: 130px !important;
-        height: 190px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        height: 40vh !important; /* Paksa pendek */
+@media only screen and (max-width: 768px) {
+    /* 1. Paksa Video Hero & Container Pendek */
+    .hero, [class*="hero"] {
+        height: 40vh !important;
         min-height: 250px !important;
     }
-    
-    .hero-video {
+
+    .hero-video, .hero video {
         height: 100% !important;
         width: 100% !important;
         object-fit: cover !important;
     }
 
-    .card-info p {
-        font-size: 9px !important; /* Paksa kecil */
+    /* 2. Paksa SEMUA teks di dalam card mengecil tanpa pandang bulu */
+    .card *, [class*="card"] * {
+        font-size: 9px !important;
+        line-height: 1.1 !important;
+    }
+
+    /* 3. Paksa potong baris untuk semua elemen paragraf/deskripsi */
+    .card p, .card span, .card-info p {
         display: -webkit-box !important;
         -webkit-line-clamp: 2 !important;
         -webkit-box-orient: vertical !important;
         overflow: hidden !important;
+        max-height: 2.2em !important;
+    }
+
+    /* 4. Kecilkan ukuran kartu */
+    .card, .card-image {
+        width: 130px !important;
+        height: 75px !important;
     }
 }
