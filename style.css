@@ -474,68 +474,79 @@ body {
     opacity: 0.8;
 }
 
-/* --- KHUSUS TAMPILAN HP (Hanya Tulisan yang Mengecil) --- */
-/* --- SERIUS: FIX RESPONSIVE UNTUK HP --- */
-/* --- FIX TOTAL: TEKS DI BAWAH VIDEO & FOTO TETAP ASLI --- */
+/* --- KODE FINAL RESPONSIVE HP (SERIUS & ANTI-GEPENG) --- */
 @media only screen and (max-width: 768px) {
     
-    /* 1. HERO SECTION: Kecilkan tanpa gepeng */
-    .hero {
-        height: 45vh !important;
-        min-height: 280px !important;
+    /* 1. HERO SECTION: Video pas, teks mengecil */
+    header.hero {
+        height: 40vh !important;
+        min-height: 250px !important;
     }
-    .hero-video {
+    header.hero .hero-video {
+        width: 100% !important;
+        height: 100% !important;
         object-fit: cover !important;
     }
-    .main-title { font-size: 30px !important; }
-
-    /* 2. VIDEO CARDS (Season 1): Teks di bawah video */
-    .card:not(.tall) {
-        min-width: 160px !important;
-        height: auto !important; /* Biar tinggi kartu menyesuaikan teks di bawah */
-        background: transparent !important;
-        display: block !important;
+    header.hero .main-title {
+        font-size: 28px !important;
     }
-    .card:not(.tall) .card-video {
-        height: 90px !important; /* Ukuran video tetap kecil */
+    header.hero .hero-description {
+        font-size: 12px !important;
+    }
+
+    /* 2. SEASON 1 (Video): Teks pindah ke bawah video */
+    .row:nth-of-type(1) .episode-list .card {
+        min-width: 160px !important;
+        height: auto !important; /* Biar wadah ngikutin teks di bawah */
+        background: transparent !important;
+        overflow: visible !important;
+    }
+    .row:nth-of-type(1) .card-video {
+        height: 90px !important; /* Ukuran video tetap rapi */
         width: 100% !important;
         object-fit: cover !important;
         border-radius: 4px;
     }
-    .card:not(.tall) .card-info {
-        position: relative !important; /* Pindahkan teks ke bawah video */
+    .row:nth-of-type(1) .card-info {
+        position: relative !important; /* Paksa teks pindah ke bawah */
         opacity: 1 !important;
+        padding: 8px 0 !important;
         background: transparent !important;
-        padding: 5px 0 !important;
     }
-    .card:not(.tall) .card-info h4 {
+    .row:nth-of-type(1) .card-info h4 {
         font-size: 11px !important;
-        color: white !important;
         margin: 2px 0 !important;
+        color: white !important;
     }
-    .card:not(.tall) .card-info p {
+    .row:nth-of-type(1) .card-info p {
         font-size: 9px !important;
+        line-height: 1.2 !important;
+        display: block !important; /* Teks muncul terus tanpa perlu hover */
         color: #b3b3b3 !important;
-        display: block !important; /* Teks muncul terus di bawah */
     }
 
-    /* 3. FOTO CARDS (Season 3): Ukuran Tetap Sesuai Awal (Tall) */
+    /* 3. SEASON 3 (Foto): Ukuran tetap TALL (Potrait) */
     .card.tall {
-        min-width: 130px !important; /* Lebar menyesuaikan HP */
-        height: 190px !important; /* Tetap tinggi/potrait tapi skala HP */
+        min-width: 130px !important; 
+        height: 200px !important; /* Kembalikan ke ukuran tinggi */
     }
     .card.tall .card-img {
-        height: 100% !important;
         width: 100% !important;
-        object-fit: cover !important; /* Foto tidak gepeng */
+        height: 100% !important;
+        object-fit: cover !important; /* Foto tidak akan gepeng */
     }
     .card.tall .card-info {
-        position: absolute !important; /* Tetap melayang di atas foto */
+        position: absolute !important; /* Teks tetap di dalam foto */
         bottom: 0;
         background: linear-gradient(transparent, rgba(0,0,0,0.8));
     }
 
-    /* 4. Penyesuaian Baris */
-    .row-title { font-size: 16px !important; }
-    .episode-list { gap: 12px !important; }
+    /* 4. Perapihan Jarak Row */
+    .row-title {
+        font-size: 15px !important;
+        margin-left: 4% !important;
+    }
+    .content-container {
+        margin-top: -30px !important;
+    }
 }
