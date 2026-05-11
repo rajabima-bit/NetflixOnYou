@@ -169,6 +169,51 @@ body {
     z-index: 0;
 }
 
+/* --- PERBAIKAN KHUSUS TAMPILAN HP --- */
+@media (max-width: 768px) {
+    /* 1. Paksa Video Hero & Header Mengecil di HP */
+    .hero {
+        height: 55vh !important; /* Biar video hero tidak memenuhi layar HP kau */
+        min-height: 350px !important;
+    }
+
+    .hero-video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Video tetap rapi, tidak gepeng */
+    }
+
+    /* 2. Paksa Teks di Season 1 (Episode List) Mengecil */
+    .card-info h4 {
+        font-size: 10px !important; /* Judul episode jadi kecil di HP */
+        margin-bottom: 2px !important;
+    }
+
+    .card-info p {
+        font-size: 9px !important; /* Deskripsi episode jadi sangat kecil */
+        line-height: 1.1 !important;
+        /* Teknik potong teks biar gak meluber */
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    /* 3. Atur Jarak Baris (Row) biar Pas di Layar Kecil */
+    .row {
+        margin: 15px 0 !important;
+        padding: 0 10px !important;
+    }
+
+    .row-title {
+        font-size: 14px !important; /* Judul Season 1, 2, 3 jadi lebih pas */
+    }
+
+    /* 4. Sesuaikan Posisi Kontainer Utama */
+    .content-container {
+        margin-top: -20px !important; /* Biar tidak terlalu jauh jaraknya dari video hero */
+    }
+}
 .hero-overlay {
     position: absolute;
     top: 0;
