@@ -474,79 +474,73 @@ body {
     opacity: 0.8;
 }
 
-/* --- KODE FINAL RESPONSIVE HP (SERIUS & ANTI-GEPENG) --- */
+/* --- KODE RESPONSIVE FINAL (LAPTOP & HP) --- */
 @media only screen and (max-width: 768px) {
     
-    /* 1. HERO SECTION: Video pas, teks mengecil */
-    header.hero {
-        height: 40vh !important;
+    /* 1. HERO SECTION (Video Header) */
+    .hero {
+        height: 45vh !important; /* Pendekkan header di HP */
         min-height: 250px !important;
     }
-    header.hero .hero-video {
+    .hero-video {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important;
+        object-fit: cover !important; /* Video tidak gepeng */
     }
-    header.hero .main-title {
-        font-size: 28px !important;
-    }
-    header.hero .hero-description {
-        font-size: 12px !important;
-    }
+    .main-title { font-size: 28px !important; }
+    .hero-description { font-size: 12px !important; }
 
-    /* 2. SEASON 1 (Video): Teks pindah ke bawah video */
-    .row:nth-of-type(1) .episode-list .card {
+    /* 2. SEASON 1 (Video dengan Teks di Bawah) */
+    /* Target baris pertama yang berisi video-video */
+    .row:first-of-type .card {
         min-width: 160px !important;
-        height: auto !important; /* Biar wadah ngikutin teks di bawah */
+        height: auto !important; /* Tinggi otomatis karena teks pindah ke bawah */
         background: transparent !important;
-        overflow: visible !important;
     }
-    .row:nth-of-type(1) .card-video {
-        height: 90px !important; /* Ukuran video tetap rapi */
+    .row:first-of-type .card-video {
+        height: 90px !important;
         width: 100% !important;
         object-fit: cover !important;
         border-radius: 4px;
     }
-    .row:nth-of-type(1) .card-info {
-        position: relative !important; /* Paksa teks pindah ke bawah */
+    .row:first-of-type .card-info {
+        position: relative !important; /* Paksa teks turun ke bawah foto/video */
         opacity: 1 !important;
         padding: 8px 0 !important;
         background: transparent !important;
     }
-    .row:nth-of-type(1) .card-info h4 {
+    .row:first-of-type .card-info h4 {
         font-size: 11px !important;
-        margin: 2px 0 !important;
         color: white !important;
     }
-    .row:nth-of-type(1) .card-info p {
+    .row:first-of-type .card-info p {
         font-size: 9px !important;
+        display: block !important; /* Teks muncul terus di HP */
         line-height: 1.2 !important;
-        display: block !important; /* Teks muncul terus tanpa perlu hover */
-        color: #b3b3b3 !important;
+        /* Potong baris jika kepanjangan */
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
     }
 
-    /* 3. SEASON 3 (Foto): Ukuran tetap TALL (Potrait) */
+    /* 3. SEASON 3 (Foto Tall Tetap Tinggi) */
+    /* Target khusus class .tall agar rasionya tidak rusak */
     .card.tall {
-        min-width: 130px !important; 
-        height: 200px !important; /* Kembalikan ke ukuran tinggi */
+        min-width: 130px !important;
+        height: 200px !important; /* Tetap tinggi/potrait */
     }
     .card.tall .card-img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important; /* Foto tidak akan gepeng */
-    }
-    .card.tall .card-info {
-        position: absolute !important; /* Teks tetap di dalam foto */
-        bottom: 0;
-        background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        object-fit: cover !important; /* Foto tidak gepeng */
     }
 
-    /* 4. Perapihan Jarak Row */
-    .row-title {
-        font-size: 15px !important;
-        margin-left: 4% !important;
-    }
+    /* 4. PENYESUAIAN LAYOUT */
     .content-container {
-        margin-top: -30px !important;
+        margin-top: -40px !important;
+        padding: 0 15px 40px 15px !important;
     }
+    .row-title { font-size: 15px !important; }
+    .episode-list { gap: 12px !important; }
 }
