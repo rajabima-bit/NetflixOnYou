@@ -475,71 +475,74 @@ body {
 }
 
 /* --- KHUSUS TAMPILAN HP (Hanya Tulisan yang Mengecil) --- */
+/* --- SERIUS: FIX RESPONSIVE UNTUK HP --- */
 @media only screen and (max-width: 768px) {
     
-    /* 1. Video Hero: Pendekkan wadahnya, tapi videonya jangan diganggu rasionya */
-    .hero {
-        height: 50vh !important;
-        min-height: 300px !important;
+    /* 1. Paksa Video Hero Mengecil & Tidak Gepeng */
+    header.hero {
+        height: 45vh !important;
+        min-height: 280px !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
-    .hero-video {
+    header.hero .hero-video {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important; /* Menjaga video tidak gepeng */
+        object-fit: cover !important; /* Supaya video tidak gepeng */
+        position: absolute !important;
     }
 
-    /* 2. Teks Utama di Hero (Judul Besar) */
-    .main-title {
-        font-size: 32px !important;
-        line-height: 1.1 !important;
+    /* 2. Paksa Teks Hero Mengecil */
+    .hero-content .main-title {
+        font-size: 28px !important;
+        line-height: 1 !important;
     }
 
-    .hero-description {
-        font-size: 13px !important;
+    .hero-content .hero-description {
+        font-size: 12px !important;
         line-height: 1.3 !important;
     }
 
-    /* 3. Teks Season 1 (Tulisan Mengecil, Foto Tetap) */
-    .row-title {
-        font-size: 16px !important;
-        margin-bottom: 10px !important;
+    /* 3. Paksa Teks Season 1 Mengecil (Ini intinya) */
+    .content-container .row .row-title {
+        font-size: 15px !important;
     }
 
-    /* Judul Episode */
-    .card-info h4 {
-        font-size: 10px !important; 
+    /* Target langsung ke h4 dan p di dalam card-info */
+    .content-container .card .card-info h4 {
+        font-size: 10px !important;
         margin-bottom: 2px !important;
     }
 
-    /* Deskripsi Episode (Ini yang kau mau mengecil parah) */
-    .card-info p {
-        font-size: 8.5px !important; /* Ukuran teks deskripsi mengecil */
-        line-height: 1.2 !important;
+    .content-container .card .card-info p {
+        font-size: 8px !important; /* Ukuran sangat kecil khusus layar HP */
+        line-height: 1.1 !important;
         display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important; /* Potong jadi 2 baris saja */
+        -webkit-line-clamp: 2 !important; /* Potong teks jadi 2 baris */
         -webkit-box-orient: vertical !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
+        white-space: normal !important;
     }
 
-    /* 4. Banner Notifikasi Merah */
-    .new-episode-banner p {
-        font-size: 11px !important;
+    /* 4. Jaga Ukuran Kartu (Agar foto tidak berubah/gepeng) */
+    .content-container .card {
+        min-width: 150px !important;
+        height: 85px !important;
+        flex: 0 0 auto !important;
     }
 
-    /* 5. Kalimat Penutup (Closing Statement) */
-    .closing-title {
-        font-size: 28px !important;
+    .content-container .card .card-video, 
+    .content-container .card .card-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Foto/Video tetap proporsional */
     }
 
-    .closing-text {
-        font-size: 14px !important;
-    }
-
-    /* Menjaga ukuran kartu tetap stabil agar foto tidak gepeng */
-    .card {
-        min-width: 160px !important;
-        height: 90px !important;
+    /* 5. Penyesuaian Spasi */
+    .content-container {
+        margin-top: -60px !important;
+        padding-bottom: 30px !important;
     }
 }
