@@ -474,43 +474,72 @@ body {
     opacity: 0.8;
 }
 
+/* --- KHUSUS TAMPILAN HP (Hanya Tulisan yang Mengecil) --- */
 @media only screen and (max-width: 768px) {
-    /* 1. Paksa Video Hero & Container Pendek */
-    .hero, [class*="hero"] {
-        height: 40vh !important;
-        min-height: 250px !important;
+    
+    /* 1. Video Hero: Pendekkan wadahnya, tapi videonya jangan diganggu rasionya */
+    .hero {
+        height: 50vh !important;
+        min-height: 300px !important;
     }
 
     .hero-video {
         width: 100% !important;
         height: 100% !important;
-        /* Kuncinya di sini, Lek! */
-        object-fit: cover !important; 
-        object-position: center !important;
+        object-fit: cover !important; /* Menjaga video tidak gepeng */
     }
 
-    /* 2. Paksa SEMUA teks di dalam card mengecil tanpa pandang bulu */
-    .card {
-        /* Jaga rasio kartu (misal 16:9) */
-        aspect-ratio: 16 / 9 !important; 
-        height: auto !important; 
+    /* 2. Teks Utama di Hero (Judul Besar) */
+    .main-title {
+        font-size: 32px !important;
+        line-height: 1.1 !important;
     }
 
-    /* 3. Paksa potong baris untuk semua elemen paragraf/deskripsi */
-    .card p, .card span, .card-info p {
+    .hero-description {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* 3. Teks Season 1 (Tulisan Mengecil, Foto Tetap) */
+    .row-title {
+        font-size: 16px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Judul Episode */
+    .card-info h4 {
+        font-size: 10px !important; 
+        margin-bottom: 2px !important;
+    }
+
+    /* Deskripsi Episode (Ini yang kau mau mengecil parah) */
+    .card-info p {
+        font-size: 8.5px !important; /* Ukuran teks deskripsi mengecil */
+        line-height: 1.2 !important;
         display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important;
+        -webkit-line-clamp: 2 !important; /* Potong jadi 2 baris saja */
         -webkit-box-orient: vertical !important;
         overflow: hidden !important;
-        max-height: 2.2em !important;
+        text-overflow: ellipsis !important;
     }
 
-   /* Agar Foto di Card (Season 1) Tidak Gepeng */
-    .card-image, .card img {
-        width: 100% !important;
-        height: 100% !important;
-        /* Ini juga wajib ada biar gak gepeng */
-        object-fit: cover !important;
-        object-position: center !important;
+    /* 4. Banner Notifikasi Merah */
+    .new-episode-banner p {
+        font-size: 11px !important;
+    }
+
+    /* 5. Kalimat Penutup (Closing Statement) */
+    .closing-title {
+        font-size: 28px !important;
+    }
+
+    .closing-text {
+        font-size: 14px !important;
+    }
+
+    /* Menjaga ukuran kartu tetap stabil agar foto tidak gepeng */
+    .card {
+        min-width: 160px !important;
+        height: 90px !important;
     }
 }
