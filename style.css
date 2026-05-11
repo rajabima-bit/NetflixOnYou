@@ -481,16 +481,19 @@ body {
         min-height: 250px !important;
     }
 
-    .hero-video, .hero video {
-        height: 100% !important;
+    .hero-video {
         width: 100% !important;
-        object-fit: cover !important;
+        height: 100% !important;
+        /* Kuncinya di sini, Lek! */
+        object-fit: cover !important; 
+        object-position: center !important;
     }
 
     /* 2. Paksa SEMUA teks di dalam card mengecil tanpa pandang bulu */
-    .card *, [class*="card"] * {
-        font-size: 9px !important;
-        line-height: 1.1 !important;
+    .card {
+        /* Jaga rasio kartu (misal 16:9) */
+        aspect-ratio: 16 / 9 !important; 
+        height: auto !important; 
     }
 
     /* 3. Paksa potong baris untuk semua elemen paragraf/deskripsi */
@@ -502,9 +505,12 @@ body {
         max-height: 2.2em !important;
     }
 
-    /* 4. Kecilkan ukuran kartu */
-    .card, .card-image {
-        width: 130px !important;
-        height: 75px !important;
+   /* Agar Foto di Card (Season 1) Tidak Gepeng */
+    .card-image, .card img {
+        width: 100% !important;
+        height: 100% !important;
+        /* Ini juga wajib ada biar gak gepeng */
+        object-fit: cover !important;
+        object-position: center !important;
     }
 }
